@@ -88,7 +88,7 @@ export default class CreateDay extends Component {
                     </div>
 
                     <div className="form-group">
-                        <label>Triggers: </label>
+                        <label>Did you identify any triggers today?</label>
                         <input 
                             type="text"
                             required
@@ -99,7 +99,7 @@ export default class CreateDay extends Component {
                     </div>
 
                     <div className="form-group">
-                        <label>Soothers: </label>
+                        <label>What lifted your mood today?</label>
                         <input
                             type="text"
                             required
