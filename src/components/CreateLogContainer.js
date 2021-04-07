@@ -7,6 +7,3 @@ export default styled.div`
     background: orange;
     padding: 10px 30px;
 `;
-
-
-// style={{width: "500px", margin: "0 auto", background: "orange", padding: "10px 30px"}}

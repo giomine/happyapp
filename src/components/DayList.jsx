@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CreateDay from "./CreateDay";
 import axios from 'axios';
+import DayContainer from "./DayContainer";
 
 const quotes = fetch("https://quotes.rest/qod?language=en")
     .then(res => res.json())
@@ -23,11 +24,11 @@ printQuote();
 
 
 const Day = props => (
-        <div style={{display: "flex", flexDirection: "column", background: "orange", padding: "15px", margin: "15px", borderRadius: "10px"}}>
+        <DayContainer>
             <div style={{padding: "10px"}}>{props.day.date.substring(0,10)}</div>
             <div style={{padding: "10px"}}>Triggers: {props.day.anxiety}</div>
             <div style={{padding: "10px"}}>Soothers: {props.day.smiles}</div>
-        </div>
+        </DayContainer>
 )
 
 
