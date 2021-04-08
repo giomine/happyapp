@@ -26,4 +26,31 @@ router.route('/add').post((req, res) => {
 
 
 
+router.route('/:id').get((req, res) => {
+    Day.findById(req.params.id)
+    .then(day => res.json(day))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/:id').delete((req, res) => {
+    Day.findByIdAndDelete(req.params.id)
+    .then(() => res.json('Entry deleted.'))
+    .catch(err => res.status(400).json('Error: ' + err));
+});
+
+router.route('/update/:id').post((req, res) => {
+    Day.findById(req.params.id)
+    .then(day => {
+        day.date = Date.parse(req.body.date);
+        day.anxiety = req.body.anxiety;
+        day.smiles = req.body.smiles;
+
+        day.save()
+        .then(() => res.json('Entry updated!'))
+        .catch(err => res.status(400).json('Error: ' + err));
+    });
+})
+
+
+
 module.exports = router;

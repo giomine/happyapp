@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Navbar from "./components/Navbar";
 import DayList from "./components/DayList";
+import EditDay from "./components/EditDay";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Navbar />
       <br />
       <Route path='/' exact component={DayList} />
+      <Route path='/edit/:id' component={EditDay} />
     </Router>
   );
 }

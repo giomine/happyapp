@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import CreateDay from "./CreateDay";
 import axios from 'axios';
 import DayContainer from "./DayContainer";
@@ -28,6 +29,9 @@ const Day = props => (
             <div style={{padding: "10px"}}>{props.day.date.substring(0,10)}</div>
             <div style={{padding: "10px"}}>Triggers: {props.day.anxiety}</div>
             <div style={{padding: "10px"}}>Soothers: {props.day.smiles}</div>
+            <div style={{padding: "10px"}}>
+                <Link to={"/edit/" + props.day._id}>edit</Link> | <a href="#" onClick={() => { props.deleteDay(props.day._id) }}>delete</a>
+            </div>
         </DayContainer>
 )
 
@@ -37,20 +41,32 @@ export default class DayList extends Component {
     constructor(props){
         super(props);
 
+        this.deleteDay = this.deleteDay.bind(this);
+
         this.state = {days: []};
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/day')
+        axios.get('http://localhost:5000/day/')
             .then(response => {
                 this.setState({ days: response.data })
             })
-            .catch((err) => console.log(err));
+            .catch((error) => {
+                console.log(error);
+            })
+    }
+
+    deleteDay(id) {
+        axios.delete('http://localhost:5000/day/' + id)
+            .then(res => console.log(res.data));
+        this.setState({
+            days: this.state.days.filter(el => el._id !== id)
+        })
     }
 
     dayList() {
         return this.state.days.map(currentDay => {
-            return <Day day={currentDay} key={currentDay._id} />
+            return <Day day={currentDay} deleteDay={this.deleteDay} key={currentDay._id} />
         })
     }
 
