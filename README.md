@@ -1,9 +1,21 @@
-How to run:
+## How to run:
 
 
-Run $ npm install to install dependencies.
+Install the dependencies:
+```bash
+npm install
+```
 
-In the backend directory run $ nodemon server.
-In the happyapp directory run $ npm run start.
+Then start the server:
+```bash
+cd backend
+nodemon server
+```
 
-App will run at localhost:5000.
+Then launch React:
+```bash
+cd happy-app
+npm run start
+```
+
+App will now run at localhost:5000.
