@@ -76,7 +76,7 @@ export default class DayList extends Component {
         return (
             <Bg>
             <div className="container">
-                <i><p id="heading" style={{textAlign: "center", paddingTop: "40px"}}></p></i>
+                <i><p id="heading" style={{textAlign: "center", paddingTop: "25px"}}></p></i>
                 <br />
                 <CreateDay />
 

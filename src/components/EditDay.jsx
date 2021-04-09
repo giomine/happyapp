@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios';
 import CreateLogContainer from "./styledcomponents/CreateLogContainer";
+import Bg from "./styledcomponents/Bg";
 
 
 export default class EditDay extends Component {
@@ -76,6 +77,7 @@ export default class EditDay extends Component {
     
     render() {
         return (
+            <Bg style={{height: "100vh"}}>
             <CreateLogContainer>
                 {/* <h3>Edit Daily Log</h3> */}
                 <form onSubmit={this.onSubmit}>
@@ -118,6 +120,7 @@ export default class EditDay extends Component {
 
                 </form>
             </CreateLogContainer>
+            </Bg>
         )
     }
 }

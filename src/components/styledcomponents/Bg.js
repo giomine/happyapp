@@ -9,5 +9,5 @@ export default styled.div`
         background-repeat: repeat;
         position: relative;
         bottom: 24px;
-        padding-bottom: 24px;
+        padding: 24px 0;
 `
