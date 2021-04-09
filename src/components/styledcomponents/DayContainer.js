@@ -7,4 +7,6 @@ export default styled.div`
     padding: 15px;
     margin: 15px;
     border-radius: 10px;
+    max-width: 90%;
+    word-wrap: break-word;
 `
