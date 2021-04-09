@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios';
-import CreateLogContainer from "./CreateLogContainer";
+import CreateLogContainer from "./styledcomponents/CreateLogContainer";
 
 
 export default class CreateDay extends Component {
@@ -110,7 +110,7 @@ export default class CreateDay extends Component {
                     </div>
 
                     <div className="form-group">
-                        <input type="submit" value="Create Daily Log" className="btn btn-primary" />
+                        <input type="submit" value="Create Daily Log" className="btn btn-primary" style={{marginTop: "15px"}} />
                     </div>
 
                 </form>

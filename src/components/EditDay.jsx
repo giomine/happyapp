@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios';
-import CreateLogContainer from "./CreateLogContainer";
+import CreateLogContainer from "./styledcomponents/CreateLogContainer";
 
 
 export default class EditDay extends Component {

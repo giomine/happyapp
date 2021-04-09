@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Link } from 'react-router-dom';
-import CreateDay from "./CreateDay";
 import axios from 'axios';
-import DayContainer from "./DayContainer";
+import CreateDay from "./CreateDay";
+import DayContainer from "./styledcomponents/DayContainer";
+import Bg from "./styledcomponents/Bg";
 
 const quotes = fetch("https://quotes.rest/qod?language=en")
     .then(res => res.json())
@@ -73,8 +74,9 @@ export default class DayList extends Component {
 
     render() {
         return (
+            <Bg>
             <div className="container">
-                <i><p id="heading" style={{textAlign: "center", marginTop: "20px"}}></p></i>
+                <i><p id="heading" style={{textAlign: "center", paddingTop: "40px"}}></p></i>
                 <br />
                 <CreateDay />
 
@@ -85,6 +87,7 @@ export default class DayList extends Component {
                     </div>
                 </div>
             </div>
+            </Bg>
         )
     }
 }
