@@ -26,9 +26,9 @@ printQuote();
 
 const Day = props => (
         <DayContainer>
-            <div style={{padding: "10px"}}>{props.day.date.substring(0,10)}</div>
-            <div style={{padding: "10px"}}>Triggers: {props.day.anxiety}</div>
-            <div style={{padding: "10px"}}>Soothers: {props.day.smiles}</div>
+            <div style={{padding: "10px", width: "170px" }}>{props.day.date.substring(0,10)}</div>
+            <div style={{padding: "10px" }}><b><span style={{fontSize: "18px"}}>Triggers: </span></b><br /> {props.day.anxiety}</div>
+            <div style={{padding: "10px"}}><b><span style={{fontSize: "18px"}}>Soothers: </span></b><br /> {props.day.smiles}</div>
             <div style={{padding: "10px"}}>
                 <Link to={"/edit/" + props.day._id}>edit</Link> | <a href="#" onClick={() => { props.deleteDay(props.day._id) }}>delete</a>
             </div>
