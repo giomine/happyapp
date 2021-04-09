@@ -7,7 +7,7 @@ import DayContainer from "./DayContainer";
 const quotes = fetch("https://quotes.rest/qod?language=en")
     .then(res => res.json())
     .then(data => {
-            var todaysQuote = data.contents.quotes[0].quote;
+            var todaysQuote = '"' + data.contents.quotes[0].quote + '"';
             var todaysAuthor = data.contents.quotes[0].author;
 
             // console.log(todaysQuote + " - " + todaysAuthor);
@@ -74,12 +74,12 @@ export default class DayList extends Component {
     render() {
         return (
             <div className="container">
-                <i><p id="heading" style={{textAlign: "center"}}></p></i>
+                <i><p id="heading" style={{textAlign: "center", marginTop: "20px"}}></p></i>
                 <br />
                 <CreateDay />
 
                 <div className="container">
-                <h3 style={{marginLeft: "15px"}}>Daily Logs</h3>
+                <h3 style={{margin: "40px 0 15px 15px"}}>Daily Logs</h3>
                     <div style={{display: "flex", flexWrap: "wrap"}}>  {/* I can use flexDirection: column-reverse OR find a way to organise by date */}
                         { this.dayList() }
                     </div>
