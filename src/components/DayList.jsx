@@ -31,7 +31,8 @@ const Day = props => (
             <div style={{padding: "10px" }}><b><span style={{fontSize: "18px"}}>Triggers: </span></b><br /> {props.day.anxiety}</div>
             <div style={{padding: "10px"}}><b><span style={{fontSize: "18px"}}>Soothers: </span></b><br /> {props.day.smiles}</div>
             <div style={{padding: "10px"}}>
-                <Link to={"/edit/" + props.day._id}>edit</Link> | <a href="#" onClick={() => { props.deleteDay(props.day._id) }}>delete</a>
+                {/* <Link to={"/edit/" + props.day._id}>edit</Link> | <a href="#" onClick={() => { props.deleteDay(props.day._id) }}>delete</a> */}
+                <a href={"/edit/" + props.day._id}>edit</a> | <a href="#" onClick={() => { props.deleteDay(props.day._id) }}>delete</a>
             </div>
         </DayContainer>
 )

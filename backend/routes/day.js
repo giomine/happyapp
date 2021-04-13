@@ -38,8 +38,8 @@ router.route('/:id').delete((req, res) => {
     .catch(err => res.status(400).json('Error: ' + err));
 });
 
-router.route('/update/:id').post((req, res) => {
-    Day.findById(req.params.id)
+router.route('/update/:id').put((req, res) => {
+    Day.findByIdAndUpdate(req.params.id)
     .then(day => {
         day.date = Date.parse(req.body.date);
         day.anxiety = req.body.anxiety;
