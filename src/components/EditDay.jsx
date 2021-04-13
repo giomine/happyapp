@@ -149,7 +149,7 @@ export default class EditDay extends Component {
                     </div>
 
                     <div className="form-group">
-                        <label>Did you identify any triggers today?</label>
+                        <label>Triggers: </label>
                         <input 
                             type="text"
                             required
@@ -160,7 +160,7 @@ export default class EditDay extends Component {
                     </div>
 
                     <div className="form-group">
-                        <label>What lifted your mood today?</label>
+                        <label>Soothers: </label>
                         <input
                             type="text"
                             required
@@ -171,7 +171,7 @@ export default class EditDay extends Component {
                     </div>
 
                     <div className="form-group">
-                        <input type="submit" value="Edit Daily Log" className="btn btn-primary" style={{marginTop: "15px"}} />
+                        <input type="submit" value="Submit changes" className="btn btn-primary" style={{marginTop: "15px"}} />
                     </div>
 
                 </form>

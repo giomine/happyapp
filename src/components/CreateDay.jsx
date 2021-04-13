@@ -88,29 +88,31 @@ export default class CreateDay extends Component {
                     </div>
 
                     <div className="form-group">
-                        <label>Did you identify any triggers today?</label>
+                        <label>Triggers: </label>
                         <input 
                             type="text"
                             required
                             className="form-control"
                             value={this.state.anxiety}
                             onChange={this.onChangeAnxiety}
+                            placeholder="Did you identify any triggers today?"
                         />
                     </div>
 
                     <div className="form-group">
-                        <label>What lifted your mood today?</label>
+                        <label>Soothers: </label>
                         <input
                             type="text"
                             required
                             className="form-control"
                             value={this.state.smiles}
                             onChange={this.onChangeSmiles}
+                            placeholder="What lifted your mood today?"
                         />
                     </div>
 
                     <div className="form-group">
-                        <input type="submit" value="Create Daily Log" className="btn btn-primary" style={{marginTop: "15px"}} />
+                        <input type="submit" value="Create" className="btn btn-primary" style={{marginTop: "15px"}} />
                     </div>
 
                 </form>
