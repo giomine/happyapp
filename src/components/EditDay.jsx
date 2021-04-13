@@ -50,7 +50,7 @@ export default class EditDay extends Component {
 
 
     componentDidMount() {
-        axios.get('http://localhost:5000/day' + this.props.match.params.id)
+        axios.get('http://localhost:5000/day/' + this.props.match.params.id)
             .then(response => {
                 this.setState({ 
                     date: new Date(response.data.date),
@@ -96,7 +96,7 @@ export default class EditDay extends Component {
         }
         console.log(day);
 
-        axios.post('http://localhost:5000/day/update' + this.props.match.params.id, day)
+        axios.put('http://localhost:5000/day/update/' + this.props.match.params.id, day)
             .then(res => console.log(res.data));
 
 
@@ -120,11 +120,12 @@ export default class EditDay extends Component {
             </DayContainer>
         )
         return this.state.days.map(currentDay => {
-            return <Day day={currentDay} deleteDay={this.deleteDay} key={currentDay._id} />
+            return <Day day={currentDay} key={currentDay._id} />
         })
     }
 
     
+
 
     
     render() {
@@ -155,7 +156,6 @@ export default class EditDay extends Component {
                             className="form-control"
                             value={this.state.anxiety}
                             onChange={this.onChangeAnxiety}
-                            placeholder={this.props.match.params.id}    // need to correct this
                         />
                     </div>
 
