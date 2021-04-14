@@ -67,9 +67,48 @@ export default class DayList extends Component {
     }
 
     dayList() {
-        return this.state.days.map(currentDay => {
+
+
+        const sorted = this.state.days
+        // const sorted = this.state.days.sort((a,b) => a.date > b.date) this doesn't sort anything
+        // console.log("Old " + JSON.stringify(sorted))   this prints out all full daily log objects
+        // const sortedDays = sorted.reverse()  this does nothing atm
+        
+        function sortDates(){
+
+            let dateArray = []
+
+            for (let i = 0; i < sorted.length; i++) {
+                const dates = sorted[i].date
+                // console.log("All dates: " + dates) // this gives us all the dates but not sorted
+
+                dateArray.push(dates)
+            }
+
+            console.log("Date Array: " + dateArray) // this gives us all the dates in an array but not sorted
+
+            let sortedAllDates = dateArray.sort()
+            console.log("Sorted All Dates: " + sortedAllDates) // this gives us all the dates in an array, sorted from oldest to most recent
+
+            let reverseAllDates = sortedAllDates.reverse()
+            console.log("Reversed Dates: " + reverseAllDates)  // THIS is the one we want mapped
+        }
+
+        sortDates();
+
+        return sorted.map(currentDay => {
+            // console.log("Hello " + this.state.days[15].date)      These lines print one specific instance of date and anxiety
+            // console.log("Hello Hello " + sortedDays[15].anxiety)
+
+            // for (let i = 0; i < sorted.length; i++) {
+            //     const dates = sorted[i].date
+            //     console.log("POOP! " + dates)  this gives us the dates but not sorted AND SIXTEEN TIMES
+            //     }
+            
             return <Day day={currentDay} deleteDay={this.deleteDay} key={currentDay._id} />
         })
+
+
     }
 
 
