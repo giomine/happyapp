@@ -103,6 +103,13 @@ export default class DayList extends Component {
             //     const dates = sorted[i].date
             //     console.log("POOP! " + dates)  this gives us the dates but not sorted AND SIXTEEN TIMES
             //     }
+
+
+            let dateArray = []
+            dateArray.push(currentDay.date)
+            let sortedAllDates = dateArray.sort()
+            let reverseAllDates = sortedAllDates.reverse()
+            console.log("Forever: " + reverseAllDates) // shows all objects in default order... and not in single array because map is looping. so we have 6 arrays, that's why it can't sort them.
             
             return <Day day={currentDay} deleteDay={this.deleteDay} key={currentDay._id} />
         })
