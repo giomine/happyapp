@@ -3,6 +3,7 @@ import axios from 'axios';
 import CreateDay from "./CreateDay";
 import DayContainer from "./styledcomponents/DayContainer";
 import Bg from "./styledcomponents/Bg";
+import Quote from "./styledcomponents/Quote";
 
 const quotes = fetch("https://quotes.rest/qod?language=en")
     .then(res => res.json())
@@ -122,7 +123,7 @@ export default class DayList extends Component {
         return (
             <Bg>
             <div className="container">
-                <i><p id="heading" style={{textAlign: "center", paddingTop: "25px"}}></p></i>
+                <Quote><p id="heading"></p></Quote>
                 <br />
                 <CreateDay />
 
