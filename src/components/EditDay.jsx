@@ -5,6 +5,7 @@ import axios from 'axios';
 import CreateLogContainer from "./styledcomponents/CreateLogContainer";
 import Bg from "./styledcomponents/Bg";
 import DayContainer from "../components/styledcomponents/DayContainer";
+import Quote from "./styledcomponents/Quote";
 
 
 const quotes = fetch("https://quotes.rest/qod?language=en")
@@ -131,7 +132,7 @@ export default class EditDay extends Component {
         return (
             <Bg>
             <div className="container">
-            <i><p id="heading" style={{textAlign: "center", paddingTop: "25px"}}></p></i>
+            <Quote><p id="heading"></p></Quote>
             <br />
             <CreateLogContainer className="bg-info">
                 {/* <h3>Edit Daily Log</h3> */}
