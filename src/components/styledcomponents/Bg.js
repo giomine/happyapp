@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export default styled.div`
         margin: 0;
-        background-color: rgb(240,240,207);
+        background-color: rgba(255, 255, 250, 1);
         ${'' /* background-color: rgb(250,250,207);        more yellowy/peachy - too bright? */}
         background-image: url("https://www.transparenttextures.com/patterns/blizzard.png");
         background-position: center;

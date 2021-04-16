@@ -134,12 +134,12 @@ export default class EditDay extends Component {
             <div className="container">
             <Quote><p id="heading"></p></Quote>
             <br />
-            <CreateLogContainer className="bg-info">
+            <CreateLogContainer paleBlue>
                 {/* <h3>Edit Daily Log</h3> */}
                 <form onSubmit={this.onSubmit}>
                     
                     <div className="form-group">
-                        <label>Date: </label>
+                        <label>Edit Date: </label>
                         <div>
                             <DatePicker
                                 selected={this.state.date}
@@ -149,7 +149,7 @@ export default class EditDay extends Component {
                     </div>
 
                     <div className="form-group">
-                        <label>Triggers: </label>
+                        <label>Edit Triggers: </label>
                         <input 
                             type="text"
                             required
@@ -160,7 +160,7 @@ export default class EditDay extends Component {
                     </div>
 
                     <div className="form-group">
-                        <label>Soothers: </label>
+                        <label>Edit Soothers: </label>
                         <input
                             type="text"
                             required

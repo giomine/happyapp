@@ -5,7 +5,7 @@ require('bootstrap');
 function Navbar() {
 
     return (
-        <nav className="navbar navbar-dark bg-info navbar-expand-lg">
+        <nav className="navbar navbar-dark navbar-expand-lg" style={{background: "rgb(53, 192, 214)"}}>
         <div className="container">
                 <Link to="/" className="navbar-brand">HappyApp</Link>
 
