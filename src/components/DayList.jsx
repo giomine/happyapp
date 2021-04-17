@@ -128,7 +128,7 @@ export default class DayList extends Component {
                 <CreateDay />
 
                 <div className="container">
-                <h3 style={{margin: "40px 0 15px 15px", color: "#3a3a38"}}>Daily Logs</h3>
+                <h3 style={{margin: "40px 0 15px 15px", color: "#636360"}}>Daily Logs</h3>
                     <div style={{display: "flex", flexWrap: "wrap"}}>  {/* I can use flexDirection: column-reverse OR find a way to organise by date */}
                         { this.dayList() }
                     </div>
