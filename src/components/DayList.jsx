@@ -32,7 +32,7 @@ const Day = props => (
             <div style={{padding: "10px"}}><b><span style={{fontSize: "18px"}}>Soothers: </span></b><br /> {props.day.smiles}</div>
             <div style={{padding: "10px"}}>
                 {/* <Link to={"/edit/" + props.day._id}>edit</Link> | <a href="#" onClick={() => { props.deleteDay(props.day._id) }}>delete</a> */}
-                <a href={"/edit/" + props.day._id}>edit</a> | <a href="#" onClick={() => { props.deleteDay(props.day._id) }}>delete</a>
+                <a href={"/edit/" + props.day._id} style={{color: "orange", textDecoration: "none"}}>edit</a> | <a href="#" style={{color: "#ff6057", textDecoration: "none"}} onClick={() => { props.deleteDay(props.day._id) }}>delete</a>
             </div>
         </DayContainer>
 )
@@ -122,13 +122,13 @@ export default class DayList extends Component {
     render() {
         return (
             <Bg>
-            <div className="container">
-                <Quote><p id="heading"></p></Quote>
-                <br />
+            <div className="container" style={{margin: "0 auto 25px"}}>
+                <Quote><p id="heading" style={{margin: "0"}}></p></Quote>
+                <br /><br />
                 <CreateDay />
 
                 <div className="container">
-                <h3 style={{margin: "40px 0 15px 15px"}}>Daily Logs</h3>
+                <h3 style={{margin: "40px 0 15px 15px", color: "#3a3a38"}}>Daily Logs</h3>
                     <div style={{display: "flex", flexWrap: "wrap"}}>  {/* I can use flexDirection: column-reverse OR find a way to organise by date */}
                         { this.dayList() }
                     </div>
