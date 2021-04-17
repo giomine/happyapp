@@ -8,26 +8,6 @@ import DayContainer from "../components/styledcomponents/DayContainer";
 import Quote from "./styledcomponents/Quote";
 
 
-const quotes = fetch("https://quotes.rest/qod?language=en")
-    .then(res => res.json())
-    .then(data => {
-            var todaysQuote = '"' + data.contents.quotes[0].quote + '"';
-            var todaysAuthor = data.contents.quotes[0].author;
-
-            // console.log(todaysQuote + " - " + todaysAuthor);
-            return todaysQuote + " - " + todaysAuthor;
-        })
-
-const printQuote = async () => {
-    const a = await quotes;
-    console.log("Quote of the day is: " + a);
-    document.getElementById('heading').innerText = a;
-    // return "Quote of the day: " + a;
-};
-
-printQuote();
-
-
 
 export default class EditDay extends Component {
 
@@ -132,7 +112,7 @@ export default class EditDay extends Component {
         return (
             <Bg>
             <div className="container">
-            <Quote><p id="heading" style={{margin: "0"}}></p></Quote>
+            <Quote><h3 style={{margin: "0"}}>Edit Log</h3></Quote> 
             <br />
             <CreateLogContainer paleBlue>
                 {/* <h3>Edit Daily Log</h3> */}
@@ -179,7 +159,7 @@ export default class EditDay extends Component {
 
 
             <div className="container">
-                <h3 style={{margin: "40px 0 15px 15px"}}>Daily Logs</h3>
+                <h3 style={{margin: "40px 0 15px 15px", color: "#636360"}}>Daily Logs</h3>
                     <div style={{display: "flex", flexWrap: "wrap"}}>  {/* I can use flexDirection: column-reverse OR find a way to organise by date */}
                         { this.dayList() }
                     </div>

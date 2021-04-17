@@ -5,24 +5,6 @@ import DayContainer from "./styledcomponents/DayContainer";
 import Bg from "./styledcomponents/Bg";
 import Quote from "./styledcomponents/Quote";
 
-const quotes = fetch("https://quotes.rest/qod?language=en")
-    .then(res => res.json())
-    .then(data => {
-            var todaysQuote = '"' + data.contents.quotes[0].quote + '"';
-            var todaysAuthor = data.contents.quotes[0].author;
-
-            // console.log(todaysQuote + " - " + todaysAuthor);
-            return todaysQuote + " - " + todaysAuthor;
-        })
-
-const printQuote = async () => {
-    const a = await quotes;
-    console.log("Quote of the day is: " + a);
-    document.getElementById('heading').innerText = a;
-    // return "Quote of the day: " + a;
-};
-
-printQuote();
 
 
 const Day = props => (
@@ -123,7 +105,7 @@ export default class DayList extends Component {
         return (
             <Bg>
             <div className="container" style={{margin: "0 auto 25px"}}>
-                <Quote><p id="heading" style={{margin: "0"}}></p></Quote>
+                <Quote><h3 style={{margin: "0"}}>Create Log</h3></Quote> 
                 <br /><br />
                 <CreateDay />
 
