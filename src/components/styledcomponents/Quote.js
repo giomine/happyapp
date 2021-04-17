@@ -10,4 +10,11 @@ export default styled.div`
     background: #e9e6e7;
     border-radius: 10px;
     color: #3a3a38;
+
+    @media (max-width: 767px) {
+        width: 60%;
+    }
+    @media (max-width: 300px) {
+        font-size: 12px;
+    }
 `
