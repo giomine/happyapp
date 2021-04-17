@@ -132,7 +132,7 @@ export default class EditDay extends Component {
         return (
             <Bg>
             <div className="container">
-            <Quote><p id="heading"></p></Quote>
+            <Quote><p id="heading" style={{margin: "0"}}></p></Quote>
             <br />
             <CreateLogContainer paleBlue>
                 {/* <h3>Edit Daily Log</h3> */}
@@ -171,7 +171,7 @@ export default class EditDay extends Component {
                     </div>
 
                     <div className="form-group">
-                        <input type="submit" value="Submit changes" className="btn btn-primary" style={{marginTop: "15px"}} />
+                        <input type="submit" value="Submit changes" className="btn" style={{marginTop: "15px", background: "#eeb76b", color: "white"}} />
                     </div>
 
                 </form>

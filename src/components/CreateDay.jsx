@@ -112,7 +112,7 @@ export default class CreateDay extends Component {
                     </div>
 
                     <div className="form-group">
-                        <input type="submit" value="Create" className="btn btn-primary" style={{marginTop: "15px"}} />
+                        <input type="submit" value="Create" className="btn" style={{marginTop: "15px", background: "#5c9598", color: "white"}} />
                     </div>
 
                 </form>
