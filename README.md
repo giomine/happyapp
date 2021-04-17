@@ -1,3 +1,4 @@
+![](public/Landing.png)
 ![](public/happyApp.png)
 
 ## How to run:
