@@ -1,3 +1,5 @@
+![](public/happyApp.png)
+
 ## How to run:
 
 
