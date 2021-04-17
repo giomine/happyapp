@@ -8,5 +8,5 @@ export default styled.div`
         background-size: 25px 25px;
         position: relative;
         bottom: 24px;
-        padding: 24px 0;
+        padding: 24px 0 50px;
 `
