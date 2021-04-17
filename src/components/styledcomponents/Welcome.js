@@ -6,7 +6,7 @@ export default styled.div`
     justify-content: center;
     align-items: center;
     height: 70vh;
-    color: #3a3a38;
+    color: #636360;
     text-align: center;
     h1 {
         font-size: 50px;
