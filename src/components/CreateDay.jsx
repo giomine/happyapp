@@ -59,7 +59,7 @@ export default class CreateDay extends Component {
         }
         console.log(day);
 
-        axios.post('https://mern-happy-app.herokuapp.com/day/add', day)
+        axios.post('http://localhost:5000/day/add', day)
             .then(res => console.log(res.data));
 
 
