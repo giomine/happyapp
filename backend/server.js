@@ -21,12 +21,10 @@ connection.once('open', () => {
 
 
 const dayRouter = require('./routes/day');
-const proxy = require('http-proxy-middleware')
 
-module.exports = function(app) {
-    app.use('/day', dayRouter);
-    app.use(proxy(['/api', '/day' ], { target: 'http://localhost:5000' }));
-} 
+
+
+app.use('/day', dayRouter); // should this be '/' if it's a one-page app?
 
 
 if(process.env.NODE_ENV === 'production') {

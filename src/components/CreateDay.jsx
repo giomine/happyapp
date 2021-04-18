@@ -59,11 +59,11 @@ export default class CreateDay extends Component {
         }
         console.log(day);
 
-        axios.post('http://localhost:5000/day/add', day)
+        axios.post('/day/add', day)
             .then(res => console.log(res.data));
 
 
-        window.location = '/';
+        window.location = '/logs';
 
     }
 
