@@ -33,7 +33,7 @@ class LandingPage extends Component {
     return (
         <Bg>
             <Welcome className="container">
-                <h1 style={{color: "#c3d7d3"}}>Welcome to <span style={{color: "#f2b8a7"}}>HappyApp!</span></h1>
+                <h1 style={{color: "#5c9598"}}>Welcome to <span style={{color: "#e97755"}}>HappyApp!</span></h1>
                 <h3>It's great to see you</h3>
                 <h5>HappyApp makes it really easy to keep track of anxiety triggers and soothers as they happen</h5>
                 <Link to="/logs" className="btn" style={{marginTop: "15px", background: "#5c9598", color: "white"}}>Create log</Link>
