@@ -18,18 +18,15 @@ connection.once('open', () => {
     console.log('MongoDB database connection established successfully');
 })
 
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static('/build'));
+    console.log("Butts are for pooping")
+}
 
 
 const dayRouter = require('./routes/day');
 
-
-
 app.use('/day', dayRouter); // should this be '/' if it's a one-page app?
-
-
-if(process.env.NODE_ENV === 'production') {
-    app.use(express.static('/build'));
-}
 
 
 app.listen(port, () => {
