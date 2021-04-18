@@ -21,8 +21,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "cd backend && node server.js",
+    "build": "npm run build",
     "install-client": "npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "test": "react-scripts test",
