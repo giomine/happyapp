@@ -27,6 +27,11 @@ const dayRouter = require('./routes/day');
 app.use('/day', dayRouter); // should this be '/' if it's a one-page app?
 
 
+if(process.env.NODE_ENV === 'production') {
+    app.use(express.static('/build'));
+}
+
+
 app.listen(port, () => {
     console.log('Server is running on port ' + port);
 })
