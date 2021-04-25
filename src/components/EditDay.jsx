@@ -30,7 +30,7 @@ export default class EditDay extends Component {
 
 
     componentDidMount() {
-        axios.get('http://localhost:5000/day/' + this.props.match.params.id)
+        axios.get('https://localhost:5000/day/' + this.props.match.params.id)
             .then(response => {
                 this.setState({ 
                     date: new Date(response.data.date),
@@ -39,7 +39,7 @@ export default class EditDay extends Component {
                  })
             })
 
-        axios.get('http://localhost:5000/day/')
+        axios.get('https://localhost:5000/day/')
         .then(response => {
             this.setState({ days: response.data })
         })
@@ -76,7 +76,7 @@ export default class EditDay extends Component {
         }
         console.log(day);
 
-        axios.put('http://localhost:5000/day/update/' + this.props.match.params.id, day)
+        axios.put('https://localhost:5000/day/update/' + this.props.match.params.id, day)
             .then(res => console.log(res.data));
 
 
