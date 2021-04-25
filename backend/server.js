@@ -20,7 +20,6 @@ connection.once('open', () => {
 
 if(process.env.NODE_ENV === 'production') {
     app.use(express.static('/build'));
-    console.log("'Butts are for pooping' - Erin, The Office")
 }
 
 
