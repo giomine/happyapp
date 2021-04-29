@@ -18,7 +18,7 @@ nodemon server
 Then launch React:
 ```bash
 cd happy-app
-npm run start
+npm run dev
 ```
 
 App will now run at localhost:5000.
