@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 require('dotenv').config();
 
@@ -9,6 +11,8 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '../build')));
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, '../build')));
 
 
 const uri = process.env.ATLAS_URI;
@@ -18,14 +22,10 @@ connection.once('open', () => {
     console.log('MongoDB database connection established successfully');
 })
 
-if(process.env.NODE_ENV === 'production') {
-    app.use(express.static('/build'));
-}
-
 
 const dayRouter = require('./routes/day');
 
-app.use('/day', dayRouter); // should this be '/' if it's a one-page app?
+app.use('/day', dayRouter);
 
 
 app.listen(port, () => {

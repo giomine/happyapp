@@ -31,7 +31,7 @@ export default class DayList extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://localhost:5000/day/')
+        axios.get('/day/')
             .then(response => {
                 this.setState({ days: response.data })
             })
@@ -41,7 +41,7 @@ export default class DayList extends Component {
     }
 
     deleteDay(id) {
-        axios.delete('https://localhost:5000/day/' + id)
+        axios.delete('/day/' + id)
             .then(res => console.log(res.data));
         this.setState({
             days: this.state.days.filter(el => el._id !== id)
