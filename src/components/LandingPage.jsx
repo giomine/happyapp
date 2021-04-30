@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 function LandingPage(props) {
-    const [quote, setQuote] = useState('');
+    const [quote, setQuote] = useState('"HappyApp helped me understand myself more and feel more peaceful - thank you!"  ~ anon user');
 
     useEffect(() => {
             const quotes = fetch("https://quotes.rest/qod?language=en")
@@ -40,7 +40,7 @@ function LandingPage(props) {
                 <h5>HappyApp makes it really easy to keep track of anxiety triggers and soothers as they happen</h5>
                 <Link to="/logs" className="btn" style={{marginTop: "15px", background: "#5c9598", color: "white"}}>Create log</Link>
             </Welcome>
-            {quote && (<Quote><p id="heading" style={{margin: "0"}}>Quote of the Day failed to load - refresh page</p>{quote}</Quote>)}
+            <Quote><p id="heading" style={{margin: "0"}}></p>{quote}</Quote>)
         </Bg>
     )
     
