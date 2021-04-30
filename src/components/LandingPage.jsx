@@ -1,13 +1,14 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import Bg from "./styledcomponents/Bg";
 import Quote from "./styledcomponents/Quote";
 import Welcome from "./styledcomponents/Welcome";
 import { Link } from "react-router-dom";
 
 
-class LandingPage extends Component {
+function LandingPage(props) {
+    const [quote, setQuote] = useState('');
 
-    componentDidMount(){
+    useEffect(() => {
             const quotes = fetch("https://quotes.rest/qod?language=en")
                 .then(res => res.json())
                 .then(data => {
@@ -19,17 +20,18 @@ class LandingPage extends Component {
                     })
             
             const printQuote = async () => {
-                const a = await quotes;
-                console.log("Quote of the day is: " + a);
-                document.getElementById('heading').innerText = a;
+                const quote = await quotes;
+                console.log("Quote of the day is: " + quote);
+                setQuote(quote);
+                //document.getElementById('heading').innerText = a;
                 // return "Quote of the day: " + a;
             };
             printQuote();
-    };
+    },[]);
     
 
 
-    render() {
+
     return (
         <Bg>
             <Welcome className="container">
@@ -38,10 +40,10 @@ class LandingPage extends Component {
                 <h5>HappyApp makes it really easy to keep track of anxiety triggers and soothers as they happen</h5>
                 <Link to="/logs" className="btn" style={{marginTop: "15px", background: "#5c9598", color: "white"}}>Create log</Link>
             </Welcome>
-            <Quote><p id="heading" style={{margin: "0"}}>Quote of the Day failed to load - refresh page</p></Quote>
+            {quote && (<Quote><p id="heading" style={{margin: "0"}}>Quote of the Day failed to load - refresh page</p>{quote}</Quote>)}
         </Bg>
     )
-    }
+    
 }
 
 export default LandingPage;
