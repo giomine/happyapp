@@ -1,4 +1,4 @@
-const router = require('Express').Router();
+const router = require('express').Router();
 let Day = require('../models/day.model');
 
 router.route('/').get((req, res) => {
