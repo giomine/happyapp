@@ -40,7 +40,7 @@ function LandingPage(props) {
                 <h5>HappyApp makes it really easy to keep track of anxiety triggers and soothers as they happen</h5>
                 <Link to="/logs" className="btn" style={{marginTop: "15px", background: "#5c9598", color: "white"}}>Create log</Link>
             </Welcome>
-            <Quote><p id="heading" style={{margin: "0"}}></p>{quote}</Quote>)
+            <Quote><p id="heading" style={{margin: "0"}}></p>{quote}</Quote>
         </Bg>
     )
     
