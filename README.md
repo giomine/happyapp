@@ -21,4 +21,4 @@ cd happy-app
 npm run dev
 ```
 
-App will now run at localhost:5000.
+App will now run at localhost:3000.
