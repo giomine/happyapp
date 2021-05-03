@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 function LandingPage(props) {
-    const [quote, setQuote] = useState('"HappyApp helped me understand myself more and feel more peaceful - thank you!"  ~ anon user');
+    const [quote, setQuote] = useState('');
 
     useEffect(() => {
             const quotes = fetch("https://quotes.rest/qod?language=en")
