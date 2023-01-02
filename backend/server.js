@@ -2,9 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
 
-require('dotenv').config();
+
+require('dotenv').config({ path: path.resolve(__dirname, './.env') });
 
 const dayRouter = require('./routes/day');
 
@@ -19,13 +19,13 @@ app.get('*', (req, res) => res.sendFile(path.join(__dirname, '../build/index.htm
 
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect(process.env.MONGODB_URI || uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI || uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true }).catch(error => console.log(error));
 const connection = mongoose.connection;
 connection.once('open', () => {
-    console.log('MongoDB database connection established successfully');
-})
+    console.log('MongoDB database connection established successfully')
+});
 
 
 app.listen(port, () => {
     console.log('Server is running on port ' + port);
-})
+});

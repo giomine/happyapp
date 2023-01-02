@@ -48,7 +48,7 @@ router.route('/update/:id').put((req, res) => {
         day.save()
         .then(() => res.json('Entry updated!'))
         .catch(err => res.status(400).json('Error: ' + err));
-    });
+    })
 })
 
 
