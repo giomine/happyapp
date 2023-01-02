@@ -14,7 +14,7 @@ const Day = props => (
             <div style={{padding: "10px"}}><b><span style={{fontSize: "18px"}}>Soothers: </span></b><br /> {props.day.smiles}</div>
             <div style={{padding: "10px"}}>
                 {/* <Link to={"/edit/" + props.day._id}>edit</Link> | <a href="#" onClick={() => { props.deleteDay(props.day._id) }}>delete</a> */}
-                <a className="orangeHover" href={"/edit/" + props.day._id} style={{color: "gray", textDecoration: "none"}}>edit</a> | <a className="redHover" href="#" style={{color: "gray", textDecoration: "none"}} onClick={() => { props.deleteDay(props.day._id) }}>delete</a>
+                <a className="orangeHover" href={"/edit/" + props.day._id} style={{color: "gray", textDecoration: "none"}}>edit</a> | <button className="redHover" href="#" style={{color: "gray", textDecoration: "none", border: "none", background: "none" }} onClick={() => { props.deleteDay(props.day._id) }}>delete</button>
             </div>
         </DayContainer>
 )
